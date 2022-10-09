@@ -1,0 +1,33 @@
+#+title: Some AUR packages I hate building again and again
+
+AUR is great, but life is too short to compile softwares. In this repo I store some precompiled AUR packaged that I use quite often.
+
+* How to
+** Create an arch package from AUR PKGBUILD
+There are multiple ways. I use paru AUR helper, it builds and places ~<package>.pkg.tar.zst~ in ~~/.cache/paru/clone/<package>/~ directory. Alternatively, we can also ~git clone <aur URL>~ and then create a ~<package>.pkg.tar.zst~ using ~makepkg~ in the directory.
+
+Now we have a ~<package>.pkg.tar.zst~ file, we can continue to next step.
+
+** Create an arch repo and host on github
+- [[https://youtu.be/CYqd2AHXosk][Reference]]
+
+*** Creating arch repo
+Make a git repository (here I'll use placeholder name ~<repo-name>~) and ~mkdir x86_64~ in that repository. Put all the ~<package>.pkg.tar.zst~ files in ~x86_64~ directory. Then ~cd x86_64~ and run command ~repo-add <repo-name>.db.tar.gz *.pkg.tar.zst~. This will create ~<repo-name>.db.tar.gz~ and ~<repo-name>.files.tar.gz~ files in the ~x86_64~ directory and their respective simlinks.
+
+*A caviate*: For some reason ~git~ don't play well with simlinks. So ~mv <repo-name>.files.tar.gz <repo-name>.files~ and ~mv <repo-name>.db.tar.gz <repo-name>.db~. And then push these changes to github.
+
+*** Hosting
+In github, go to ~<repo-name> --> Settings --> Pages~ and choose ~main~ branch to deploy these the repo as a site.
+
+** Use your custom repo
+Add the following lines to ~/etc/pacman.conf~
+#+begin_src shell
+[<repo-name>]
+SigLevel = Optional TrustAll
+Server = https://<github-username>.github.io/$repo/$arch
+#+end_src
+
+* List of packages in this repo
++ ipe
+  - qt5-qyspell
++ celestia
