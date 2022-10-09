@@ -1,4 +1,5 @@
 #+title: Some AUR packages I hate building again and again
+#+include: ./header.org
 
 AUR is great, but life is too short to compile softwares. In this repo I store some precompiled AUR packaged that I use quite often.
 
