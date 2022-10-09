@@ -4,7 +4,7 @@ AUR is great, but life is too short to compile softwares. In this repo I store s
 
 * How to
 ** Create an arch package from AUR PKGBUILD
-There are multiple ways. I use paru AUR helper, it builds and places ~<package>.pkg.tar.zst~ in ~~/.cache/paru/clone/<package>/~ directory. Alternatively, we can also ~git clone <aur URL>~ and then create a ~<package>.pkg.tar.zst~ using ~makepkg~ in the directory.
+There are multiple ways. I use paru AUR helper, it builds and places ~<package>.pkg.tar.zst~ in ~$HOME/.cache/paru/clone/<package>/~ directory. Alternatively, we can also ~git clone <aur URL>~ and then create a ~<package>.pkg.tar.zst~ using ~makepkg~ in the directory.
 
 Now we have a ~<package>.pkg.tar.zst~ file, we can continue to next step.
 
