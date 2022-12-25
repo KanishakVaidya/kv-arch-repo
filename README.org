@@ -15,7 +15,7 @@ Now we have a ~<package>.pkg.tar.zst~ file, we can continue to next step.
 *** Creating arch repo
 Make a git repository (here I'll use placeholder name ~<repo-name>~) and ~mkdir x86_64~ in that repository. Put all the ~<package>.pkg.tar.zst~ files in ~x86_64~ directory. Then ~cd x86_64~ and run command ~repo-add <repo-name>.db.tar.gz *.pkg.tar.zst~. This will create ~<repo-name>.db.tar.gz~ and ~<repo-name>.files.tar.gz~ files in the ~x86_64~ directory and their respective simlinks.
 
-*A caviate*: For some reason ~git~ don't play well with simlinks. So ~mv <repo-name>.files.tar.gz <repo-name>.files~ and ~mv <repo-name>.db.tar.gz <repo-name>.db~. And then push these changes to github.
+*A caveat*: For some reason ~git~ don't play well with simlinks. So ~mv <repo-name>.files.tar.gz <repo-name>.files~ and ~mv <repo-name>.db.tar.gz <repo-name>.db~. And then push these changes to github.
 
 *** Hosting
 In github, go to ~<repo-name> --> Settings --> Pages~ and choose ~main~ branch to deploy these the repo as a site.
@@ -32,3 +32,4 @@ Server = https://<github-username>.github.io/$repo/$arch
 + ipe
   - qt5-qyspell
 + celestia
++ kvos-wallpapers
