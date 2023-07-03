@@ -30,6 +30,5 @@ Server = https://<github-username>.github.io/$repo/$arch
 
 * List of packages in this repo
 + ipe
-  - qt5-qyspell
 + celestia
 + kvos-wallpapers
